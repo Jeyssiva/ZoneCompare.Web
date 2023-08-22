@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Autozoning Comparison Tool</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+<body>
+    <span style="text-align:center"><h1>Zoning Comparison Tool</h1></span>
+    <div id="exceptionstatus" class="divdisplay">
+        <table >
+            <tr>
+                <!-- <td>Exception:<span class='redcolor'>*</span><span id="sprequired" class='redcolor' style="display: none">Required</span></td> -->
+                <td><label id="lblexception">Exception:</label>
+                <label class='redcolor'>*</label></td>
+                <!-- <label id="sprequired" class='whitecolor'>Required</label></td> -->
+            </tr>
+            <tr>
+                <td><select id="drpexcep">
+                    <option value=-1>Select Exception</option>
+                    <!-- <option value="1">Incorrect - Zoning Error (Template error)</option>
+                    <option value="2">Incorrect - Zoning Error (Recognition error)</option>
+                    <option value="3">Incorrect - Candidate Error</option>
+                    <option value="4">Incorrect - Wrong Stationery</option>
+                    <option value="5">Incorrect - Suppression Error</option>
+                    <option value="6">Incorrect - Other</option>
+                    <option value="7">Incorrect - non-compliant script</option> -->
+                </select></td>
+            </tr>
+            <tr>
+                <td><label>Comments:</label>
+                <label id="cmdstar" class='whitecolor'>*</label>
+                <!-- <label id="cmdrequired" class='whitecolor'>Required</label></td> -->
+            </tr>
+            <tr>
+                <td><textarea class ='clstextarea' id="txtareacomment"></textarea></td>
+            </tr>
+            <tr>
+                <td><button id="btnok" value="OK">OK</button>
+                <button id="btncancel" value="Cancel">Cancel</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="spinner" class="divdisplay" >
+        <img src='../static/images/Spinner.gif' />
+    </div>
+
+    <div id="main">
+            <input type="hidden" id="qpid">
+            <input type="hidden" id="rownum">
+        <div>
+            <div id="searchcriteria" class="div-border">
+                <br>
+                <span class="setfont_size leftmargin3">Search Criteria :</span> <input type="radio" checked id="rdobulk" name="searchcre"> <span class="setfont_size">Bulk Processing</span>
+                <input type="radio" id="rdosearchid" name="searchcre"><span class="setfont_size">Individual Search ID</span>       
+            <div class="leftmargin4"> 
+                <br>
+                <table>
+                    <tr>
+                        <td class="setfont_size">Series:</td>
+                        <td><select id="drpseries" class="custom-select"><option value=-1>Select Series</option></select></td>
+                        <td class="spacebwtd"></td>
+                        <td class="setfont_size">CSID:</td>
+                        <td><input type="text" id="txtcsid"></td>
+                    </tr>
+                    <tr class="break"><td colspan="5"></td></tr>          
+                    <tr>
+                        <td class="setfont_size">Component:</td>
+                        <td><select id="drpcomp"><option value=-1>Select Component</option></select></td>
+                    </tr>
+                    <tr>
+                        <td class="setfont_size">Paper:</td>
+                        <td><select id="drppaper"><option value=-1>Select Paper</option></select></td>
+                        <td class="spacebwtd"></td>
+                        <td></td>
+                        <td><button id="btnsearch" value="Search">Search</button></td>
+                    </tr>
+                </table>
+            </div>
+            </div>
+        </div>
+        <br>
+        <div id="notes" class="leftmargin5"><b>Note: The purpose of this tool is to compare the auto zoning accuracy by comparing against manual zoning, 
+                if mismatch found, please raise an appropriate exception by unticking the checkbox.</b></div>
+        <br>
+        <div id="divpagedetails">
+            <table >
+                <tr>
+                    <td><b>Candidate Script Id : </b></td>
+                    <td><b><label id="lblcsid">0</label></b></td>
+                    <td><b>Page Count : </b></td>
+                    <td><b><label id="lblpagecount">0</label></b></td>
+                    <td style="width:10%"></td>
+                    <td><button id="btnskip" class="divdisplay" value ="Skip">Skip</button></td>
+                    <!-- <td><input type="button" id="btnnext" style="display: none" value ="Next"></td></td> -->
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div id=zonewrapper-main>
+        <div id="zoneheading" class="divdisplay" >
+            <table class="zoneheader">
+                <tr>
+                    <td style="width:48%"><label class="font-details">Autozoning:</label></td>
+                    <td><label class="font-details">Manualzoning:</label></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div class="zonewrapper">  
+        <div id="zonewrapperdynamic" class ="zonewrapper">
+            <!-- <div class="div-checkbox">
+                <input type="checkbox" onclick="applyaccuracybasedpage(this)" name="chkaccuracy" class="checkbox" id="chkcorrection" checked>
+                <input type="image" id="imgexcepicon" onclick="updateexceptionstatus(this)" src="/static/images/exception_icon.png" style="width: 40px;">
+            </div>
+             <div id="divautozone" class="div-zone-size" >
+                <img id="imgautozone" src="/static/images/10491_Snippets.png" class="image-border">
+            </div>
+            <div id="divmanualzone" class="div-zone-size div-manual-position" >
+                <img id="imgmanualzone" src="/static/images/10491_Snippets.png" class="image-border">
+            </div>
+            <input type="hidden" id="he_chkcorrection" name="hidstatus"> -->
+
+        </div>
+        <table style="width:100%">
+            <tr>
+                <td><button id=btnsubmit value="Submit" style="display: none;float:right">Submit</button></td>
+            </tr>
+        </table>
+        </div>
+        </div>
+        <br>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+    <script type="text/javascript" src="../static/js/hammer.min.js"></script>
+    <script type="text/javascript" src="../static/js/less.min.js"></script>
+    <script type="text/javascript" src="../static/js/comparison.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.lazy.min.js"></script>
+    
+</body>
+</html>

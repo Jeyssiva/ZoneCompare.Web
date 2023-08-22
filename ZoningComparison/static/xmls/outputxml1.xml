@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Documents xmlns:form="http://www.abbyy.com/FlexiCapture/Schemas/Export/FormData.xsd" xmlns:addData="http://www.abbyy.com/FlexiCapture/Schemas/Export/AdditionalFormData.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<_N15_Cover_sheet:_N15_Cover_sheet addData:DocumentState="Correct" xmlns:_N15_Cover_sheet="http://www.abbyy.com/FlexiCapture/Schemas/Export/N15_Cover_sheet.xsd">
+		<_Cell_1 addData:BlockRef="0001"/>
+		<_Cell_2 addData:BlockRef="0002">4</_Cell_2>
+		<_Cell_3 addData:BlockRef="0003">5</_Cell_3>
+		<_PageHeight>2350</_PageHeight>
+		<addData:AdditionalInfo>
+			<addData:BlocksInfo>
+				<addData:Blocks Id="0001">
+					<addData:Block PageIndex="1">
+						<addData:Rect Left="23" Right="633" Top="127" Bottom="82"/>
+					</addData:Block>
+				</addData:Blocks>
+				<addData:Blocks Id="0002">
+					<addData:Block PageIndex="1">
+						<addData:Rect Left="23" Right="1110" Top="127" Bottom="82"/>
+					</addData:Block>
+				</addData:Blocks>
+				<addData:Blocks Id="0003">
+					<addData:Block PageIndex="1">
+						<addData:Rect Left="23" Right="1591" Top="127" Bottom="82"/>
+					</addData:Block>
+				</addData:Blocks>
+			</addData:BlocksInfo>
+		</addData:AdditionalInfo>
+	</_N15_Cover_sheet:_N15_Cover_sheet>
+</form:Documents>
